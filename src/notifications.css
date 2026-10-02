@@ -1,0 +1,97 @@
+/* Popup notifications: keep the status meaning without a full-colour block. */
+.popup-notification-list.-overlay {
+  inset-inline-end: 16px !important;
+  bottom: 16px !important;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.popup-notification-item {
+  --calm-notification-tone: var(--calm-accent);
+  box-sizing: border-box;
+  min-height: 52px;
+  max-width: min(430px, calc(100vw - 32px));
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  border: 1px solid color-mix(in srgb, var(--calm-notification-tone) 24%, var(--calm-soft-border)) !important;
+  border-radius: 10px !important;
+  background: color-mix(in srgb, var(--calm-surface) 94%, var(--calm-notification-tone)) !important;
+  color: var(--calm-text) !important;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 13%), 0 2px 8px rgb(0 0 0 / 7%) !important;
+}
+
+.popup-notification-item.-success {
+  --calm-notification-tone: var(--joplin-color-correct);
+}
+
+.popup-notification-item.-error {
+  --calm-notification-tone: var(--joplin-color-error);
+}
+
+.popup-notification-item.-info {
+  --calm-notification-tone: var(--calm-accent);
+}
+
+.popup-notification-item > .ripple {
+  display: none !important;
+}
+
+.popup-notification-item > .icon {
+  flex: 0 0 26px;
+  width: 26px !important;
+  height: 26px !important;
+  margin-inline-end: 10px !important;
+  border-radius: 50% !important;
+  background: var(--calm-notification-tone) !important;
+  color: var(--calm-surface) !important;
+  font-size: 12px !important;
+  line-height: 26px !important;
+}
+
+.popup-notification-item > .content {
+  min-width: 0;
+  max-width: min(370px, calc(100vw - 100px)) !important;
+  padding: 3px 0 !important;
+  color: var(--calm-text) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+}
+
+.popup-notification-item > .content .link-button {
+  min-height: 26px;
+  margin-inline-start: 4px;
+  padding: 2px 7px !important;
+  border: 0 !important;
+  border-radius: 5px !important;
+  background: transparent !important;
+  color: var(--calm-accent) !important;
+  font: inherit !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+.popup-notification-item > .content .link-button:hover {
+  background: var(--calm-selected) !important;
+}
+
+.popup-notification-item > .content .link-button:focus-visible {
+  outline: 2px solid var(--calm-accent) !important;
+  outline-offset: 1px;
+}
+
+@media (max-width: 520px) {
+  .popup-notification-list.-overlay {
+    inset-inline: 10px !important;
+    bottom: 10px !important;
+    max-width: none;
+  }
+
+  .popup-notification-item {
+    width: 100%;
+    max-width: none;
+  }
+}

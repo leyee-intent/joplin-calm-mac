@@ -1,0 +1,10 @@
+node_modules/
+__pycache__/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+*.jpl
+validation/*.png
+validation/results.json

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 1,
+  "id": "io.local.calm.mac.theme",
+  "app_min_version": "3.7.18",
+  "version": "1.5.1",
+  "name": "Calm Mac 外观",
+  "description": "自适应明暗侧边栏、分类与紧凑笔记列表、靠左限宽正文，支持恢复默认外观。",
+  "author": "Local customization",
+  "platforms": [
+    "desktop"
+  ],
+  "keywords": [
+    "theme",
+    "css",
+    "macos"
+  ]
+}

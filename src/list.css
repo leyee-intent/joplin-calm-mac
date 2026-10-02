@@ -1,0 +1,281 @@
+/* list: component rules. !important is reserved for Joplin/native overrides. */
+.rli-noteList, .rli-noteList > div, .note-list {
+  background: var(--calm-list) !important;
+}
+
+.rli-noteList {
+  box-shadow: none !important;
+  flex-shrink: 0 !important;
+}
+
+.note-list {
+  border-right: 0px !important;
+}
+
+.note-list-item {
+  color: var(--calm-text) !important;
+}
+
+.note-list-item > .content {
+  border-radius: 5px;
+  margin: 2px 6px;
+  color: var(--calm-text) !important;
+  width: calc(100% - 12px) !important;
+}
+
+.note-list-item [class*="title"] {
+  font-family: -apple-system, "PingFang SC", sans-serif !important;
+  font-size: 13px !important;
+}
+
+.note-list-item::before {
+  opacity: 0.5;
+  border-color: var(--calm-soft-border) !important;
+}
+
+.note-list-item:hover {
+  background: transparent !important;
+}
+
+.note-list-item:hover > .content:not(.-selected) {
+  background: var(--calm-hover) !important;
+}
+
+.note-list-item > .content.-selected {
+  font-weight: 600;
+  background: var(--calm-selected) !important;
+  color: var(--calm-text) !important;
+}
+
+.note-list-item.-focus-visible > .content, .note-list-item-wrapper:focus-visible, .note-list-item:focus-visible {
+  outline: none !important;
+}
+
+.note-list-item.-focus-visible > .content {
+  background: color-mix(in srgb, var(--calm-surface) 68%, var(--calm-accent)) !important;
+}
+
+.rli-noteList button {
+  border-radius: 6px !important;
+}
+
+.rli-noteList div:has(> .search-and-sort) {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding: 10px 12px !important;
+}
+
+.rli-noteList .new-note-todo-buttons {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  flex: 0 0 auto !important;
+}
+
+.rli-noteList .new-note-todo-buttons > button {
+  width: 100% !important;
+  min-width: 0px !important;
+  height: 28px !important;
+}
+
+.rli-noteList .search-and-sort {
+  width: 100%;
+  align-items: center;
+  display: flex !important;
+  flex: 0 0 auto !important;
+  gap: 8px !important;
+}
+
+.rli-noteList .search-bar {
+  flex: 1 1 0px !important;
+  width: auto !important;
+  min-width: 0px !important;
+}
+
+.rli-noteList .search-and-sort > div:has(> .sort-order-field-button) {
+  flex: 0 0 auto !important;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.rli-noteList .search-bar .field {
+  height: 32px !important;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0px;
+  padding: 0px 34px 0px 10px !important;
+  border: 1px solid var(--calm-soft-border) !important;
+  border-radius: 7px !important;
+  background: color-mix(in srgb, var(--calm-list) 45%, var(--calm-surface)) !important;
+  color: var(--calm-text) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0px !important;
+  line-height: 30px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+}
+
+.note-list-item:has(> .calm-task) {
+  position: relative;
+}
+
+.note-list-item:has(> .calm-task)::before {
+  content: none !important;
+}
+
+.note-list-item:has(> .calm-task)::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: var(--calm-soft-border);
+  pointer-events: none;
+}
+
+.rli-noteList > div:has(.note-list), .rli-noteList [role="navigation"], .rli-noteList div:has(> .search-and-sort), .rli-noteList .note-list, .rli-noteList .note-list-item {
+  box-sizing: border-box;
+  width: 100% !important;
+}
+
+.note-list-item .calm-task-title {
+  font-weight: 400 !important;
+}
+
+.note-list-item .calm-task.-selected .calm-task-title {
+  font-weight: 500 !important;
+}
+
+.rli-noteList .note-list::-webkit-scrollbar {
+  width: 9px;
+}
+
+.rli-noteList .note-list::-webkit-scrollbar-thumb {
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  background-color: var(--calm-border);
+  border-radius: 8px;
+  min-height: 28px;
+}
+
+.rli-noteList .note-list::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--calm-surface) 60%, var(--calm-text));
+}
+
+.rli-noteList .search-bar .search-input {
+  width: 100%;
+  min-width: 0px;
+  position: relative;
+  height: 32px;
+  align-items: center;
+}
+
+.rli-noteList .search-bar .field::placeholder {
+  color: var(--calm-muted);
+  opacity: 0.8;
+}
+
+.rli-noteList .search-bar .field:hover {
+  border-color: var(--calm-border) !important;
+}
+
+.rli-noteList .search-bar .field:focus {
+  border-color: var(--calm-accent) !important;
+  background: var(--calm-surface) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--calm-accent) 14%, transparent) !important;
+}
+
+.rli-noteList .search-bar .button {
+  box-sizing: border-box;
+  display: grid !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute !important;
+  inset: 50% 3px auto auto !important;
+  transform: translateY(-50%) !important;
+  margin: 0px !important;
+  min-height: 26px !important;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 0px !important;
+  padding: 0px !important;
+  border: 0px !important;
+  border-radius: 5px !important;
+  color: var(--calm-muted) !important;
+  background: transparent !important;
+  place-items: center;
+  line-height: 1 !important;
+}
+
+.rli-noteList .search-bar .button:hover {
+  background: var(--calm-hover) !important;
+  color: var(--calm-text) !important;
+}
+
+.rli-noteList .search-bar .button .icon {
+  color: inherit !important;
+  font-size: 14px !important;
+}
+
+.rli-noteList .sort-order-field-button, .rli-noteList .sort-order-reverse-button {
+  height: 32px !important;
+  min-height: 32px !important;
+  background: color-mix(in srgb, var(--calm-list) 45%, var(--calm-surface)) !important;
+  color: var(--calm-muted) !important;
+  border-color: var(--calm-soft-border) !important;
+  flex: 0 0 32px;
+  box-sizing: border-box;
+  place-items: center;
+  width: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  border: 1px solid var(--calm-soft-border) !important;
+  border-radius: 7px !important;
+  display: grid !important;
+}
+
+.rli-noteList .sort-order-field-button .icon, .rli-noteList .sort-order-reverse-button .icon {
+  font-size: 14px !important;
+  color: inherit !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  line-height: 1 !important;
+}
+
+.rli-noteList .sort-order-field-button:hover, .rli-noteList .sort-order-reverse-button:hover {
+  color: var(--calm-text) !important;
+  background: var(--calm-hover) !important;
+  border-color: var(--calm-border) !important;
+}
+
+.rli-noteList .search-bar .button > .icon {
+  position: static !important;
+  transform: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  line-height: 1 !important;
+}
+
+/* Primary creation action remains discoverable, with less visual saturation. */
+.rli-noteList .new-note-todo-buttons > button:first-child {
+  background: color-mix(in srgb, var(--calm-accent) 82%, #000) !important;
+  color: #fff !important;
+}
+.rli-noteList .new-note-todo-buttons > button:first-child:hover:not(:disabled) {
+  filter: brightness(.95);
+}
+.rli-noteList .sort-order-field-button:focus-visible,
+.rli-noteList .sort-order-reverse-button:focus-visible {
+  outline: 2px solid var(--calm-accent) !important;
+  outline-offset: 2px;
+}

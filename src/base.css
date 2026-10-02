@@ -1,0 +1,26 @@
+/* base: component rules. !important is reserved for Joplin/native overrides. */
+body, input, textarea, select, button {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+}
+
+input:focus-visible, button:focus-visible {
+  outline-color: var(--calm-accent) !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--calm-border);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--calm-muted);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

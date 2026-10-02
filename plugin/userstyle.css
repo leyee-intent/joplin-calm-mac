@@ -1,0 +1,202 @@
+/* Calm Mac — reading and rich text; presentation only */
+/* Body foreground/background and link colors come from Joplin, including inside TinyMCE. */
+@media screen {
+  body, body#tinymce {
+    --calm-content-divider: color-mix(in srgb, currentColor 20%, transparent);
+    box-sizing: border-box;
+    max-width: 940px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 32px 28px 76px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.72 !important;
+    overflow-wrap: anywhere;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, "PingFang SC", sans-serif !important;
+    color: inherit;
+    font-weight: 680;
+    line-height: 1.38;
+    border-bottom: 0 !important;
+    text-wrap: balance;
+  }
+
+  h1 { font-size: 29px !important; margin: 0.1em 0 0.8em !important; letter-spacing: -0.55px; }
+  h2 {
+    font-size: 22px !important;
+    margin: 2em 0 0.75em !important;
+    padding-bottom: 0.42em;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent) !important;
+    letter-spacing: -0.2px;
+  }
+  h3 { font-size: 18.5px !important; margin: 1.65em 0 0.65em !important; }
+  h4 { font-size: 16.5px !important; margin: 1.45em 0 0.55em !important; }
+
+  h1 + p { font-size: 1.025em; color: color-mix(in srgb, currentColor 86%, transparent); }
+  hr:has(+ h1), hr:has(+ h2), hr:has(+ h3) { display: none; }
+
+  body > h1, body > h2, body > h3, body > h4,
+  body > p, body > ul, body > ol, body > blockquote,
+  body > pre, body > hr {
+    max-width: 764px;
+  }
+
+  a:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  a { text-decoration: none; text-underline-offset: 0.16em; }
+  strong { font-weight: 680; }
+
+  p { margin: 0 0 0.95em; }
+  ul, ol { margin: 0.55em 0 1.05em; padding-left: 1.55em; }
+  li { margin: 0.32em 0; padding-left: 0.12em; }
+  li::marker { color: color-mix(in srgb, currentColor 78%, transparent); font-weight: 650; }
+  li > ul, li > ol { margin: 0.3em 0 0.45em; }
+
+  blockquote {
+    margin: 1.4em 0 1.55em !important;
+    padding: 14px 18px !important;
+    border: 1px solid color-mix(in srgb, currentColor 12%, transparent) !important;
+    border-left: 3px solid color-mix(in srgb, var(--joplin-url-color, currentColor) 62%, transparent) !important;
+    border-radius: 8px;
+    background: color-mix(in srgb, currentColor 4%, transparent);
+    color: inherit;
+  }
+  blockquote > :first-child { margin-top: 0; }
+  blockquote p:last-child { margin-bottom: 0; }
+
+  code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.87em;
+    background: color-mix(in srgb, currentColor 7%, transparent);
+    border: 1px solid color-mix(in srgb, currentColor 8%, transparent);
+    border-radius: 4px;
+    padding: 0.12em 0.34em;
+  }
+  pre {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: pre;
+    background: color-mix(in srgb, currentColor 4%, transparent) !important;
+    border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+    border-radius: 9px;
+    padding: 16px 18px !important;
+    line-height: 1.58;
+  }
+  pre code { background: transparent; padding: 0; }
+
+  table {
+    /* Use translucent currentColor overlays instead of Joplin's background
+       variable. In the rendered Markdown webview that variable can remain
+       light while the app is dark, producing white tables with light text. */
+    --calm-table-frame: color-mix(in srgb, currentColor 22%, transparent);
+    --calm-table-grid: color-mix(in srgb, currentColor 12%, transparent);
+    --calm-table-head: color-mix(in srgb, currentColor 8%, transparent);
+    --calm-table-row: color-mix(in srgb, currentColor 2.5%, transparent);
+    --calm-table-row-alt: color-mix(in srgb, currentColor 4%, transparent);
+    box-sizing: border-box;
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    margin: 1.15em 0 1.7em;
+    overflow: hidden !important;
+    border: 1px solid transparent !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 9px;
+    background: var(--calm-table-row) !important;
+    background-clip: padding-box !important;
+    box-shadow: 0 0 0 1px var(--calm-table-frame) !important;
+    font-size: 0.92em;
+    table-layout: auto;
+    color: inherit !important;
+  }
+  thead, tbody, tr, th, td { color: inherit !important; }
+  thead, th { background: var(--calm-table-head) !important; }
+  th {
+    font-weight: 680;
+    line-height: 1.45;
+    text-align: left;
+    white-space: normal;
+  }
+  th, td {
+    min-width: 0;
+    padding: 11px 13px;
+    border: 0;
+    border-right: 1px solid var(--calm-table-grid) !important;
+    border-bottom: 1px solid var(--calm-table-grid) !important;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  td { line-height: 1.58; }
+  th > p, td > p { margin: 0; }
+  th:first-child, td:first-child { width: 1%; white-space: nowrap; }
+  table code { white-space: nowrap; }
+  th:last-child, td:last-child { border-right: 0 !important; }
+  tbody tr:last-child td { border-bottom: 0 !important; }
+  tbody td { background: var(--calm-table-row) !important; }
+  tbody tr:nth-child(even) td { background: var(--calm-table-row-alt) !important; }
+  /* TinyMCE adds dashed authoring guides through .mce-item-table. Keep the
+     editable table visually identical to the rendered Markdown table. */
+  table.mce-item-table {
+    border: 1px solid transparent !important;
+    outline: 0 !important;
+  }
+  table.mce-item-table th,
+  table.mce-item-table td {
+    border: 0 !important;
+    border-right: 1px solid var(--calm-table-grid) !important;
+    border-bottom: 1px solid var(--calm-table-grid) !important;
+  }
+  table.mce-item-table th:last-child,
+  table.mce-item-table td:last-child { border-right: 0 !important; }
+  table.mce-item-table tbody tr:last-child td { border-bottom: 0 !important; }
+  thead tr:first-child th:first-child { border-top-left-radius: 8px; }
+  thead tr:first-child th:last-child { border-top-right-radius: 8px; }
+  tbody tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+  tbody tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--calm-content-divider);
+    margin: 2.25em 0;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.25em auto;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 650px) {
+    body, body#tinymce { padding: 24px 22px 56px !important; font-size: 15.5px !important; }
+    h1 { font-size: 26px !important; }
+    h2 { font-size: 20px !important; }
+    table {
+      display: block;
+      min-width: 0;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      contain: inline-size;
+    }
+    th, td { min-width: 118px; padding: 9px 10px; }
+    th:first-child, td:first-child { min-width: 64px; width: auto; }
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  body, body#tinymce {
+    --calm-content-divider: color-mix(in srgb, currentColor 18%, transparent);
+  }
+}
+@media print {
+  body { color: #000; background: #fff; }
+  table { display: table; overflow: visible; }
+  h1, h2, h3 { break-after: avoid; }
+  blockquote, pre, table { break-inside: avoid; }
+}

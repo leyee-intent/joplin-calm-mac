@@ -1,0 +1,11 @@
+{
+  "manifest_version": 1,
+  "id": "io.local.dynamic-template-slash",
+  "app_min_version": "3.7.18",
+  "version": "1.0.5",
+  "name": "动态模板斜杠命令",
+  "description": "通过简短斜杠命令实时插入指定 Joplin 模板笔记的最新正文。",
+  "author": "Local customization",
+  "platforms": ["desktop"],
+  "keywords": ["template", "slash", "markdown", "productivity"]
+}

@@ -1,0 +1,225 @@
+/* editor: component rules. !important is reserved for Joplin/native overrides. */
+.rli-editor {
+  container: calm-editor / inline-size;
+  background: var(--calm-surface) !important;
+  box-shadow: none !important;
+}
+
+.rli-editor input.title-input {
+  color: var(--calm-text) !important;
+  font-weight: 600 !important;
+  padding-left: 24px !important;
+}
+
+.rli-editor .tox .tox-toolbar, .rli-editor .tox .tox-toolbar__primary, .rli-editor .tox .tox-toolbar-overlord, .rli-editor .tox .tox-editor-header {
+  background: var(--calm-list) !important;
+  box-shadow: none !important;
+}
+
+.tox .tox-editor-header {
+  border-bottom: 0px !important;
+}
+
+.tox .tox-tbtn {
+  border-radius: 6px !important;
+}
+
+.tox .tox-tbtn:hover {
+  background: var(--calm-hover) !important;
+}
+
+.tox .tox-tbtn svg {
+  fill: var(--calm-text) !important;
+}
+
+.tox .tox-tbtn--enabled {
+  background: var(--calm-selected) !important;
+}
+
+.tox .tox-tbtn--disabled {
+  opacity: 0.4;
+}
+
+.rli-editor .note-title-wrapper {
+  padding-left: 0px !important;
+}
+
+.rli-editor div:has(> button .icon-notebooks) {
+  padding: 2px 20px 6px 18px !important;
+}
+
+.rli-editor button:has(.icon-notebooks) {
+  max-width: 100%;
+  background: transparent !important;
+  color: var(--calm-muted) !important;
+  border: 0px !important;
+  box-shadow: none !important;
+  border-radius: 5px !important;
+  min-height: 26px !important;
+  height: auto !important;
+  padding: 4px 6px !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  font-weight: 400 !important;
+}
+
+.rli-editor button:has(.icon-notebooks) * {
+  color: inherit !important;
+}
+
+.rli-editor button:has(.icon-notebooks):hover, .rli-editor button:has(.icon-notebooks):focus-visible {
+  background: var(--calm-hover) !important;
+  color: var(--calm-text) !important;
+}
+
+.rli-editor button:has(.icon-notebooks):focus-visible {
+  outline-offset: 1px;
+  outline: 1px solid var(--calm-accent) !important;
+}
+
+.rli-editor > div:has(input.title-input) {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0px !important;
+}
+
+.rli-editor .note-title-wrapper ~ div:has(+ div + .editor-status-bar) {
+  padding-left: 0px !important;
+}
+
+/* Markdown source uses CodeMirror instead of the rich-text iframe. The shared
+   body wrapper is intentionally flush, so restore the same reading gutter as
+   the title inside CodeMirror itself without changing either pane's width. */
+.rli-editor .cm-editor .cm-content {
+  padding-inline: 24px !important;
+}
+
+/* In source mode the literal `>` already identifies a block quote. Joplin
+   also adds a 4px presentation border to every .cm-blockQuote line, which
+   makes raw Markdown look partially rendered. Remove only that editor-side
+   border; the rendered preview keeps its own blockquote treatment. */
+.rli-editor .cm-editor .cm-blockQuote {
+  border-left: 0 !important;
+}
+
+/* Keep the spacing correct if Joplin falls back to the legacy editor. */
+.rli-editor .CodeMirror-lines {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.rli-editor::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 1px;
+  z-index: 5;
+  pointer-events: none;
+  background: var(--calm-pane-divider);
+}
+
+.rli-editor .editor-status-bar {
+  box-sizing: border-box;
+  border-top: 1px solid var(--calm-pane-divider) !important;
+}
+
+/* Joplin 3.7 NoteEditor contract: up to three optional banners precede the
+   title, then location?, editor body, auxiliary row, status bar, search.
+   Explicit rows keep banners in flow; no matching of inline style strings. */
+.rli-editor div:has(> .note-title-wrapper) {
+  --calm-title-row: 1;
+  --calm-date-row: 2;
+  --calm-location-row: 2;
+  --calm-body-row: 3;
+  display: grid !important;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto;
+}
+.rli-editor div:has(> .note-title-wrapper) > * { grid-column: 1 / -1; min-width: 0; }
+.rli-editor .note-title-wrapper,
+.rli-editor .note-title-info-group { display: contents; }
+.rli-editor .note-title-wrapper > input.title-input {
+  grid-row: var(--calm-title-row); grid-column: 1 / 3;
+  min-width: 0; align-self: center;
+}
+.rli-editor .note-title-info-group > :not(.updated-time-label) {
+  grid-row: var(--calm-title-row); grid-column: 3; align-self: center;
+}
+.rli-editor .updated-time-label {
+  grid-row: var(--calm-date-row); grid-column: 1;
+  align-self: center; min-width: 0;
+  padding: 6px 10px 10px 24px !important;
+  font-size: 12px !important; line-height: 18px !important;
+  color: var(--calm-muted) !important; white-space: nowrap;
+}
+.rli-editor .updated-time-label::before { content: "更新时间："; }
+.rli-editor .note-title-wrapper + div:has(> button .icon-notebooks) {
+  grid-row: var(--calm-location-row); grid-column: 2 / -1 !important;
+  align-self: center; min-width: 0;
+  padding: 2px 20px 6px 0 !important;
+}
+.rli-editor .note-title-wrapper + div > button:has(.icon-notebooks) {
+  display: flex; min-width: 0; max-width: 100%;
+}
+.rli-editor .note-title-wrapper + div > button:has(.icon-notebooks) > :not(.icon) {
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rli-editor .note-title-wrapper ~ div:has(+ div + .editor-status-bar) {
+  grid-row: var(--calm-body-row); min-height: 0;
+}
+
+.rli-editor div:has(> .note-title-wrapper:nth-child(2)) {
+  --calm-title-row: 2; --calm-date-row: 3;
+  --calm-location-row: 3; --calm-body-row: 4;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto auto auto;
+}
+
+.rli-editor div:has(> .note-title-wrapper:nth-child(3)) {
+  --calm-title-row: 3; --calm-date-row: 4;
+  --calm-location-row: 4; --calm-body-row: 5;
+  grid-template-rows: auto auto auto auto minmax(0, 1fr) auto auto auto;
+}
+
+.rli-editor div:has(> .note-title-wrapper:nth-child(4)) {
+  --calm-title-row: 4; --calm-date-row: 5;
+  --calm-location-row: 5; --calm-body-row: 6;
+  grid-template-rows: auto auto auto auto auto minmax(0, 1fr) auto auto auto;
+}
+
+@container calm-editor (max-width: 540px) {
+  .rli-editor .cm-editor .cm-content {
+    padding-inline: 18px !important;
+  }
+  .rli-editor .CodeMirror-lines {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .rli-editor div:has(> .note-title-wrapper) {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .rli-editor .note-title-wrapper > input.title-input { grid-column: 1; }
+  .rli-editor .note-title-info-group > :not(.updated-time-label) { grid-column: 2; }
+  .rli-editor .updated-time-label { grid-column: 1 / -1; }
+  .rli-editor .note-title-wrapper + div:has(> button .icon-notebooks) {
+    grid-column: 1 / -1 !important; padding-left: 18px !important;
+  }
+  .rli-editor div:has(> .note-title-wrapper) {
+    --calm-location-row: 3; --calm-body-row: 4;
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto auto auto;
+  }
+  .rli-editor div:has(> .note-title-wrapper:nth-child(2)) {
+    --calm-location-row: 4; --calm-body-row: 5;
+    grid-template-rows: auto auto auto auto minmax(0, 1fr) auto auto auto;
+  }
+  .rli-editor div:has(> .note-title-wrapper:nth-child(3)) {
+    --calm-location-row: 5; --calm-body-row: 6;
+    grid-template-rows: auto auto auto auto auto minmax(0, 1fr) auto auto auto;
+  }
+  .rli-editor div:has(> .note-title-wrapper:nth-child(4)) {
+    --calm-location-row: 6; --calm-body-row: 7;
+    grid-template-rows: auto auto auto auto auto auto minmax(0, 1fr) auto auto auto;
+  }
+}

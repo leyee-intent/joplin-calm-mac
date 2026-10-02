@@ -1,0 +1,6 @@
+/* responsive: component rules. !important is reserved for Joplin/native overrides. */
+@media (max-width: 900px) {
+  .config-screen .settings-sidebar { width: 170px; min-width: 170px; }
+  .config-screen .config-screen-settings-container, .config-screen .config-screen-content-wrapper, .config-screen .search-results { padding: 20px; }
+  .config-screen .button-bar { padding: 12px 20px !important; }
+}

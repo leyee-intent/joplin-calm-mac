@@ -1,0 +1,14 @@
+/* tokens: component rules. !important is reserved for Joplin/native overrides. */
+:root {
+  --calm-pane-divider: color-mix(in srgb, var(--joplin-background-color) 86%, var(--joplin-color));
+  --calm-surface: var(--joplin-background-color);
+  --calm-text: var(--joplin-color);
+  --calm-sidebar: color-mix(in srgb, var(--calm-surface) 90%, var(--calm-text));
+  --calm-list: color-mix(in srgb, var(--calm-surface) 95%, var(--calm-text));
+  --calm-border: color-mix(in srgb, var(--calm-surface) 72%, var(--calm-text));
+  --calm-soft-border: color-mix(in srgb, var(--calm-surface) 85%, var(--calm-text));
+  --calm-muted: color-mix(in srgb, var(--calm-text) 78%, var(--calm-surface));
+  --calm-accent: var(--joplin-url-color);
+  --calm-selected: color-mix(in srgb, var(--calm-surface) 76%, var(--calm-accent));
+  --calm-hover: color-mix(in srgb, var(--calm-surface) 88%, var(--calm-text));
+}

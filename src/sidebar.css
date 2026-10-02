@@ -1,0 +1,298 @@
+/* sidebar: component rules. !important is reserved for Joplin/native overrides. */
+.rli-sideBar {
+  box-shadow: inset -1px 0 var(--calm-pane-divider);
+  background: var(--calm-sidebar) !important;
+  --calm-surface: var(--joplin-background-color);
+  --calm-text: var(--joplin-color);
+  --calm-sidebar: color-mix(in srgb, var(--calm-surface) 90%, var(--calm-text));
+  --calm-muted: color-mix(in srgb, var(--calm-text) 75%, var(--calm-surface));
+  --calm-hover: color-mix(in srgb, var(--calm-sidebar) 92%, var(--calm-text));
+  --calm-selected: color-mix(in srgb, var(--calm-sidebar) 85%, var(--joplin-url-color));
+  --calm-border: color-mix(in srgb, var(--calm-sidebar) 78%, var(--calm-text));
+  --calm-soft-border: color-mix(in srgb, var(--calm-sidebar) 88%, var(--calm-text));
+  --calm-accent: var(--joplin-url-color);
+  color: var(--calm-text) !important;
+  box-sizing: border-box;
+  padding-top: 18px !important;
+  flex-shrink: 0 !important;
+  --calm-trash-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%206h16M9%206V3h6v3M6%206l1%2015h10l1-15M10%2010v7m4-7v7%22%2F%3E%3C%2Fsvg%3E");
+  --calm-all-notes-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%227%22%20y%3D%223%22%20width%3D%2213%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M4%207v12a2%202%200%200%200%202%202h10M10%208h7M10%2012h5%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.rli-sideBar > div, .rli-sideBar .sidebar, .rli-sideBar [role="tree"] {
+  background-color: transparent !important;
+}
+
+.rli-sideBar .list-item-wrapper {
+  margin: 0px 5px;
+  border-radius: 6px;
+}
+
+.rli-sideBar .list-item-wrapper:not(.-selected):not(.-selected-primary) {
+  background: transparent !important;
+}
+
+.rli-sideBar .list-item-wrapper a {
+  color: var(--calm-text) !important;
+  font-size: 13px !important;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id][aria-expanded] > a.list-item {
+  font-weight: 600 !important;
+}
+
+.rli-sideBar .list-item-wrapper[aria-level] {
+  padding-left: calc(4px + max(0, var(--absolute-depth)) * 10px) !important;
+}
+
+.rli-sideBar .list-item-wrapper.-highlight-on-hover:not(.-selected):not(.-selected-primary):hover {
+  background: var(--calm-hover) !important;
+}
+
+.rli-sideBar .list-item-wrapper.-selected, .rli-sideBar .list-item-wrapper.-selected-primary {
+  background: var(--calm-selected) !important;
+  outline: none !important;
+}
+
+.rli-sideBar .list-item-wrapper.-selected:focus, .rli-sideBar .list-item-wrapper.-selected:focus-visible, .rli-sideBar .list-item-wrapper.-selected-primary:focus, .rli-sideBar .list-item-wrapper.-selected-primary:focus-visible, .rli-sideBar .list-item-wrapper.-selected:hover, .rli-sideBar .list-item-wrapper.-selected-primary:hover {
+  background: var(--calm-selected) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.rli-sideBar .list-item-wrapper > a, .rli-sideBar .list-item-wrapper > div, .rli-sideBar .list-item-wrapper > button, .rli-sideBar .list-item-wrapper > .toggle, .rli-sideBar .sidebar-header-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.rli-sideBar .sidebar-header-container:hover, .rli-sideBar .sidebar-header-container:focus, .rli-sideBar .sidebar-header-container:focus-visible, .rli-sideBar .sidebar-header-container:focus-within {
+  background: transparent !important;
+  background-color: transparent !important;
+  outline: none !important;
+}
+
+.rli-sideBar .list-item-wrapper.-selected a {
+  font-weight: 600;
+  color: var(--calm-text) !important;
+}
+
+.rli-sideBar .list-item-wrapper:not(.-selected):not(.-selected-primary):focus-visible {
+  outline: none !important;
+  background: color-mix(in srgb, var(--calm-surface) 68%, var(--calm-accent)) !important;
+}
+
+.rli-sideBar .sidebar-header-container *, .rli-sideBar .sidebar-header-button {
+  color: var(--calm-muted) !important;
+}
+
+.rli-sideBar .note-count-label {
+  color: var(--calm-muted) !important;
+  font-size: 11px !important;
+}
+
+.rli-sideBar .sidebar-expand-link, .rli-sideBar button {
+  color: var(--calm-muted) !important;
+}
+
+.rli-sideBar .sidebar-sync-button {
+  color: var(--calm-muted) !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+  min-width: 96px;
+  max-width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto !important;
+  height: 30px !important;
+  padding: 5px 10px !important;
+  display: inline-flex !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  grid-area: 2 / 1;
+  justify-self: start;
+}
+
+.rli-sideBar .sidebar-sync-button * {
+  color: inherit !important;
+}
+
+.rli-sideBar .sidebar-header-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 6px !important;
+  top: 3px !important;
+  border: 0px !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+}
+
+.rli-sideBar .sidebar-header-button.-newfolder {
+  inset-inline-end: 9px !important;
+}
+
+.rli-sideBar .sidebar-header-button.-collapseall {
+  inset-inline-end: 41px !important;
+}
+
+.rli-sideBar .sidebar-header-button:hover:not(:disabled), .rli-sideBar .sidebar-header-button:focus-visible {
+  background: var(--calm-hover) !important;
+  color: var(--calm-text) !important;
+}
+
+.rli-sideBar .sidebar-header-button:disabled {
+  opacity: 0.35;
+}
+
+.rli-sideBar .sidebar-sync-button:hover, .rli-sideBar .sidebar-sync-button:focus-visible {
+  background: var(--calm-hover) !important;
+  color: var(--calm-text) !important;
+}
+
+.rli-sideBar .sidebar-sync-button.-error {
+  color: var(--joplin-color-error, #dc6565) !important;
+}
+
+.rli-sideBar .sidebar-sync-button.-syncing {
+  color: var(--calm-accent) !important;
+}
+
+.rli-sideBar .sidebar-sync-button > .icon {
+  font-size: 13px !important;
+}
+
+.rli-sideBar .sync-report-toggle {
+  float: none !important;
+  border-radius: 6px;
+  width: 28px !important;
+  height: 30px !important;
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 6px !important;
+  color: var(--calm-muted) !important;
+  background: transparent !important;
+  grid-area: 2 / 2;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.rli-sideBar .sync-report-toggle:hover, .rli-sideBar .sync-report-toggle:focus-visible {
+  background: var(--calm-hover) !important;
+}
+
+.rli-sideBar #sync-report {
+  clear: both;
+  color: var(--calm-muted) !important;
+  opacity: 1 !important;
+  grid-area: 1 / 1 / auto / -1;
+  min-width: 0px;
+  max-height: 28vh;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  margin: 0px 0px 8px !important;
+}
+
+.rli-sideBar #sync-report * {
+  color: inherit !important;
+}
+
+.rli-sideBar .icon, .rli-sideBar .sidebar-expand-link {
+  color: var(--calm-muted) !important;
+}
+
+.rli-sideBar .list-item-wrapper .label {
+  color: var(--calm-text) !important;
+}
+
+.rli-sideBar .list-item-wrapper:has(.fa-trash) {
+  position: relative;
+  margin-top: 12px !important;
+}
+
+.rli-sideBar .list-item-wrapper:has(.fa-trash)::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: -5px;
+  height: 1px;
+  background: var(--calm-soft-border);
+  pointer-events: none;
+}
+
+.rli-sideBar .list-item-wrapper:has(.fa-trash) a {
+  color: var(--calm-muted) !important;
+  font-weight: 400 !important;
+}
+
+.rli-sideBar .list-item-wrapper:has(.fa-trash).-selected a {
+  color: var(--calm-text) !important;
+  font-weight: 600 !important;
+}
+
+.rli-sideBar div:has(> .sync-report-toggle) {
+  grid-template-columns: minmax(0px, 1fr) 28px;
+  grid-template-rows: auto 30px;
+  align-items: center;
+  column-gap: 8px;
+  display: grid !important;
+  flex: 0 0 auto !important;
+}
+
+.rli-sideBar .sidebar-header-button.-collapseall > i {
+  color: var(--calm-text) !important;
+}
+
+.rli-sideBar .sidebar-header-container .icon-notebooks, .rli-editor button .icon-notebooks {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  font-size: 0px !important;
+  color: var(--calm-muted) !important;
+  opacity: 1 !important;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] {
+  min-width: 0px;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] > a.list-item {
+  flex: 1 1 0px;
+  min-width: 0px;
+  overflow: hidden;
+  padding-right: 8px;
+  box-sizing: border-box;
+  opacity: 1 !important;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] > a.list-item > .title {
+  flex: 0 1 auto;
+  min-width: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] > a.list-item > :not(.title) {
+  flex-shrink: 0;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] .note-count-label {
+  flex: 0 0 auto;
+  padding-left: 6px;
+  font-weight: 400;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id] > .toggle {
+  flex: 0 0 16px;
+}
+
+.rli-sideBar .list-item-wrapper[data-folder-id].-selected:not([aria-expanded]) > a.list-item, .rli-sideBar .list-item-wrapper[data-folder-id].-selected-primary:not([aria-expanded]) > a.list-item {
+  font-weight: 500 !important;
+}

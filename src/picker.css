@@ -1,0 +1,121 @@
+/* picker: component rules. !important is reserved for Joplin/native overrides. */
+.prompt-dialog:has(.item-selector) > .content {
+  box-sizing: border-box;
+  border: 1px solid var(--calm-soft-border);
+  width: min(440px, -48px + 100vw) !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  background: var(--calm-surface) !important;
+  color: var(--calm-text) !important;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 12px 36px !important;
+}
+
+.prompt-dialog:has(.item-selector) > .content > label {
+  font-weight: 500;
+  display: block !important;
+  margin: 0px 0px 10px !important;
+  padding: 0px !important;
+  color: var(--calm-text) !important;
+  font-size: 13px !important;
+}
+
+.prompt-dialog:has(.item-selector) > .content > div:has(> .item-selector) {
+  width: 100%;
+  display: block !important;
+  background: transparent !important;
+  color: var(--calm-text) !important;
+}
+
+.prompt-dialog .item-selector {
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  font-size: 13px;
+}
+
+.prompt-dialog .item-selector [class$="-control"] {
+  width: 100%;
+  min-width: 0px !important;
+  max-width: none !important;
+  min-height: 34px !important;
+  border: 1px solid var(--calm-soft-border) !important;
+  border-radius: 7px !important;
+  background: var(--calm-surface) !important;
+  box-shadow: none !important;
+}
+
+.prompt-dialog .item-selector [class$="-control"]:focus-within {
+  border-color: var(--calm-accent) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--calm-accent) 12%, transparent) !important;
+}
+
+.prompt-dialog .item-selector [class$="-singleValue"], .prompt-dialog .item-selector input {
+  color: var(--calm-text) !important;
+  font-size: 13px !important;
+}
+
+.prompt-dialog .item-selector [class$="-indicatorSeparator"] {
+  display: none;
+}
+
+.prompt-dialog .item-selector [class$="-indicatorContainer"] {
+  padding: 6px !important;
+  color: var(--calm-muted) !important;
+}
+
+.prompt-dialog .item-selector [class$="-indicatorContainer"] svg {
+  width: 16px;
+  height: 16px;
+}
+
+.prompt-dialog .item-selector [class$="-menu"] {
+  border: 1px solid var(--calm-soft-border);
+  overflow: hidden;
+  margin-top: 6px !important;
+  border-radius: 8px !important;
+  background: var(--calm-surface) !important;
+  color: var(--calm-text) !important;
+  box-shadow: rgba(0, 0, 0, 0.094) 0px 8px 24px !important;
+}
+
+.prompt-dialog .item-selector [class$="-MenuList"], .prompt-dialog .item-selector [role="listbox"] {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  max-height: min(300px, 48vh) !important;
+}
+
+.prompt-dialog .item-selector [class$="-option"] {
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+  color: var(--calm-text) !important;
+}
+
+.prompt-dialog .item-selector [class$="-option"]:hover {
+  background: var(--calm-hover) !important;
+}
+
+.prompt-dialog .item-selector [role="option"][aria-selected="true"] {
+  background: var(--calm-selected) !important;
+}
+
+.prompt-dialog:has(.item-selector) > .content > div:last-child > button {
+  min-height: 30px;
+  padding: 5px 14px !important;
+  font-size: 13px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--calm-soft-border) !important;
+  background: var(--calm-list) !important;
+  color: var(--calm-text) !important;
+}
+
+.prompt-dialog:has(.item-selector) > .content > div:last-child > button:focus-visible {
+  outline: 2px solid var(--calm-accent) !important; outline-offset: 2px;
+}
+.prompt-dialog:has(.item-selector) > .content > div:last-child > button:disabled { opacity: .45; }
+
+/* Native dropdown prompt order: affirmative action, then cancel. */
+.prompt-dialog:has(.item-selector) > .content > div:last-child > button:first-child:not(:disabled) {
+  background: var(--calm-selected) !important;
+  border-color: var(--calm-accent) !important;
+  color: var(--calm-text) !important;
+}

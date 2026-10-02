@@ -1,0 +1,199 @@
+/* settings: component rules. !important is reserved for Joplin/native overrides. */
+.config-screen {
+  color: var(--calm-text);
+  background: var(--calm-surface);
+}
+
+.config-screen > div:not(.settings-sidebar), .config-screen .config-screen-content-wrapper, .config-screen .config-screen-settings-container, .config-screen .search-results {
+  background: var(--calm-surface) !important;
+}
+
+.config-screen .settings-sidebar {
+  min-width: 196px;
+  width: 196px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--calm-pane-divider);
+  padding: 10px 0px;
+  background: var(--calm-sidebar) !important;
+}
+
+.config-screen .settings-sidebar > .searchbox {
+  padding: 4px 12px 12px;
+}
+
+.config-screen .settings-sidebar > .tablist > .item {
+  width: calc(100% - 16px);
+  margin: 1px 8px;
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 1 !important;
+  align-items: center;
+}
+
+.config-screen .settings-sidebar > .tablist > .item > .label {
+  font-size: 14px;
+  font-weight: 450;
+  color: var(--calm-text) !important;
+  line-height: 22px;
+}
+
+.config-screen .settings-sidebar > .tablist > .item > .icon {
+  font-size: 15px;
+  width: 18px;
+  text-align: center;
+  margin-right: 10px;
+  color: var(--calm-muted) !important;
+  line-height: 22px;
+  flex: 0 0 18px;
+}
+
+.config-screen .settings-sidebar > .tablist > .item.selected {
+  background: var(--calm-selected) !important;
+}
+
+.config-screen .settings-sidebar > .tablist > .item.selected > .label {
+  font-weight: 600;
+}
+
+.config-screen .settings-sidebar > .tablist > .item:hover:not(.selected):not(.disabled) {
+  background: var(--calm-hover) !important;
+}
+
+.config-screen .settings-sidebar > .tablist > .item:focus-visible {
+  outline: none;
+  background: var(--calm-hover);
+}
+
+.config-screen .settings-sidebar > .tablist > .item.disabled {
+  opacity: 0.4 !important;
+}
+
+.config-screen .settings-sidebar > .tablist > .separator {
+  background: transparent;
+  color: var(--calm-muted);
+  border-right: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-image: none;
+  border-top: 1px solid var(--calm-pane-divider);
+  margin: 10px 16px 4px;
+  padding: 8px 4px 3px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.config-screen .config-screen-settings-container, .config-screen .search-results {
+  padding: 28px 36px;
+}
+
+.config-screen .config-screen-settings-container > div {
+  max-width: 840px;
+  width: 100%;
+  min-width: 0px;
+}
+
+.config-screen .config-screen-content-wrapper {
+  padding: 28px 36px;
+}
+
+.config-screen .setting-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.config-screen .setting-label.-for-checkbox {
+  margin-bottom: 0px;
+  margin-left: 8px;
+}
+
+.config-screen .setting-description {
+  color: var(--calm-muted);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.7;
+  max-width: 65em;
+  margin-top: 8px;
+}
+
+.config-screen .setting-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0px 18px;
+}
+
+.config-screen .config-section, .config-screen-content > .section {
+  border-color: var(--calm-soft-border);
+}
+
+.config-screen input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), .config-screen select, .config-screen textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 34px;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--calm-text) !important;
+  background: var(--calm-list) !important;
+  border: 1px solid var(--calm-border) !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+}
+
+.config-screen input[type="checkbox"], .config-screen input[type="radio"] {
+  accent-color: var(--calm-accent);
+}
+
+.config-screen input:focus-visible, .config-screen select:focus-visible, .config-screen textarea:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid var(--calm-accent) !important;
+}
+
+.config-screen input:disabled, .config-screen select:disabled {
+  opacity: 0.5;
+}
+
+.config-screen button:not([role="tab"]) {
+  border-radius: 6px;
+}
+
+.config-screen .button-bar {
+  border-top: 1px solid var(--calm-pane-divider);
+  min-height: 38px;
+  flex-shrink: 0;
+  background: var(--calm-list) !important;
+  padding: 14px 36px !important;
+}
+
+.config-screen .button-bar button {
+  min-height: 34px;
+  min-width: 82px;
+  padding: 7px 16px;
+  box-shadow: none;
+  border-radius: 7px !important;
+}
+
+.config-screen .button-bar > button, .config-screen .button-bar > div > button:last-child:not(:first-child) {
+  background: transparent !important;
+  border: 1px solid var(--calm-border) !important;
+  color: var(--calm-text) !important;
+}
+
+.config-screen .button-bar > button *, .config-screen .button-bar > div > button:last-child:not(:first-child) * {
+  color: inherit !important;
+}
+
+.config-screen .button-bar button:disabled {
+  opacity: 0.35;
+}
+
+.config-screen .button-bar > button:hover:not(:disabled), .config-screen .button-bar > div > button:last-child:not(:first-child):hover:not(:disabled) {
+  background: var(--calm-hover) !important;
+}
+
+.config-screen .settings-sidebar > .tablist > .item.sub {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
